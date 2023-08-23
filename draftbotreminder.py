@@ -114,4 +114,4 @@ async def rmd_slash(interaction: discord.Interaction, heures: int = None, minute
 
 
 
-bot.run("MTExNTcwMTMzNTc3NDQ3NDI5MA.GIv1ct.PJXAQfjXihDncicZ9N3-JpCNjNZHUsjktwhWGU")
+bot.run("token du bot")
