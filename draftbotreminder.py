@@ -112,6 +112,12 @@ async def rmd_slash(interaction: discord.Interaction, heures: int = None, minute
     time.sleep(x)
     await interaction.channel.send(f"ton reminder <@" + str(interaction.user.id) + ">")
 
+@bot.tree.command(name = "code_source", description = "Tout le code du bot est là, ainsi qu'une version épuré avec seulement l'essentiel")
+async def codesource_slash(interaction : discord.interactions):
+    await interaction.response.send_message("Voici le code source du bot, tu trouveras également une version épurée pour avoir seulement l'essentiel : https://github.com/Stur3s/bot-discord-python-reminder" )
 
+@bot.tree.command(name = "ping", description = "obtient la latence du bot")
+async def ping_slash(interaction : discord.interactions):
+    await interaction.response.send_message(f"Le bot a {int(bot.latency * 1000)} ms !" )
 
 bot.run("token du bot")
