@@ -1,6 +1,5 @@
 import discord
 from discord import app_commands
-import asyncio
 import calendar
 import time
 ts = calendar.timegm(time.gmtime())
@@ -105,9 +104,9 @@ async def prison_slash(interaction: discord.Interaction):
     await interaction.channel.send(f"ton reminder <@" + str(interaction.user.id) + ">")
 
 @bot.tree.command(name = "rmd", description= "ton reminder")
-async def rmd_slash(interaction: discord.Interaction, heures: int = None, minutes: int = None, secondes: int = None):
+async def rmd_slash(interaction: discord.Interaction, heures: int = 0, minutes: int = 0, secondes: int = 0):
     x = int(3600)*heures + int(60)* minutes + secondes
-    await interaction.response.send_message(f'tu seras remind dans', heures, 'h, ', minutes, ' m et', secondes, 's'  )
+    await interaction.response.send_message(f"tu seras remind dans {heures} h, {minutes} m et {secondes} s")
     channel = client.get_channel(str(channelId))
     time.sleep(x)
     await interaction.channel.send(f"ton reminder <@" + str(interaction.user.id) + ">")
