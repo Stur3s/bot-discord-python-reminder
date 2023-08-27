@@ -35,9 +35,9 @@ async def name_slash(interaction: discord.Interaction):
     
 #create a custom reminder
 @bot.tree.command(name = "reminder", description= "custom reminder")
-async def rmd_slash(interaction: discord.Interaction, hours: int = None, minutes: int = None, seconds: int = None):
+async def rmd_slash(interaction: discord.Interaction, hours: int = 0, minutes: int = 0, seconds: int = 0):
     x = int(3600)*hours + int(60)* minutes + seconds
-    await interaction.response.send_message(f'you will remind in ', hours, 'h, ', minutes, ' m et', seconds, 's'  )
+    await interaction.response.send_message(f"you will remind in {heures} h, {minutes} m et {secondes} s")
     channel = client.get_channel(str(channelId))
     time.sleep(x)
     await interaction.channel.send(f"your reminder <@" + str(interaction.user.id) + ">")
