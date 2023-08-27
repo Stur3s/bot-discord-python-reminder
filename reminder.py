@@ -30,7 +30,7 @@ async def on_ready():
 async def name_slash(interaction: discord.Interaction):
     await interaction.response.send_message('you will remind in <time you want>')
     channel = client.get_channel(str(channelId))
-    time.sleep(9*60+45)
+    time.sleep(<time you want in seconds>)
     await interaction.channel.send(f"your reminder <@" + str(interaction.user.id) + ">")
     
 #create a custom reminder
@@ -39,7 +39,7 @@ async def rmd_slash(interaction: discord.Interaction, hours: int = None, minutes
     x = int(3600)*hours + int(60)* minutes + seconds
     await interaction.response.send_message(f'you will remind in ', hours, 'h, ', minutes, ' m et', seconds, 's'  )
     channel = client.get_channel(str(channelId))
-    time.sleep(<time you want in seconds>)
+    time.sleep(x)
     await interaction.channel.send(f"your reminder <@" + str(interaction.user.id) + ">")
 
 
